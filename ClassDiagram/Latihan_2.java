@@ -1,3 +1,7 @@
+//Muhammad Rifki Pribadi
+//5027251087
+//Latihan2
+
 class Task {
     private String tugas;
     private boolean selesai;

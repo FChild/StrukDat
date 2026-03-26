@@ -34,6 +34,7 @@ TodoList --> Task
 Latihan_2 --> TodoList
 
 ## Kode Program JAVA
+```java
 class Task {
     private String tugas;
     private boolean selesai;
@@ -117,3 +118,59 @@ public class Latihan_2 {
         list.listtugas();
     }
 }
+```
+## Output
+![Output Program](Output.png)
+
+## Penjelasan prinsip-prinsip OOP apa saja yang diterapkan
+1. Encapsulation (Enkapsulasi)
+
+Encapsulation adalah konsep membungkus data (atribut) dan method dalam satu class, serta membatasi akses langsung ke data tersebut.
+```java
+private String tugas;
+private boolean selesai;
+private String prioritas;
+```
+Agar tetap bisa diakses, gunakan method publik seperti:
+```java
+public String getTugas()
+public boolean Selesai()
+```
+2. Abstraction (Abstraksi)
+
+Abstraction adalah menyembunyikan detail implementasi dan hanya menampilkan fungsi penting kepada pengguna.
+```java
+tasks[index].cek();
+```
+method tersebut digunakan untuk menandai tugas sebagai selesai, tanpa perlu tahu detail internalnya, yaitu:
+```java
+selesai = true;
+```
+Hal ini membuat program lebih sederhana dan mudah digunakan.
+
+3. Composition (HAS-A Relationship)
+
+Composition adalah hubungan di mana suatu class memiliki objek dari class lain.
+```java
+private Task[] tasks;
+```
+Artinya, class TodoList memiliki kumpulan objek Task.
+Relasi ini menunjukkan bahwa TodoList berperan sebagai pengelola banyak tugas.
+
+## Penjelasan keunikan yang membedakan dengan individu lain
+1. Validasi Kapasitas Array
+Program tidak hanya menambahkan tugas, tetapi juga melakukan pengecekan kapasitas:
+```java
+if (count < tasks.length)
+```
+Jika penuh:
+"TUGAS JANGAN DITUMPUK!"
+
+Ini menunjukkan adanya pengamanan sederhana terhadap overflow.
+
+2. Adanya Sistem Prioritas
+Setiap tugas yang ditambahkan memiliki atribut prioritas:
+```java
+private String prioritas;
+```
+Walaupun masih sederhana (High/Low), fitur ini sudah menunjukkan adanya konsep prioritas tugas yang harus dikerjakan.
