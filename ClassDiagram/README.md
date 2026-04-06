@@ -6,32 +6,32 @@ Program ini dapat:
 - Menandai tugas sebagai selesai
 
 ## Class Diagram
-class Task {
-    - tugas : String
-    - selesai : boolean
-    - prioritas : String
-    + Task(tugas, prioritas)
-    + getTugas() : String
-    + Selesai() : boolean
-    + getPrioritas() : String
-    + cek() : void
+class Task {  
+    - tugas : String  
+    - selesai : boolean  
+    - prioritas : String  
+    + Task(tugas, prioritas)  
+    + getTugas() : String  
+    + Selesai() : boolean  
+    + getPrioritas() : String  
+    + cek() : void  
 }
 
-class TodoList {
-    - tasks : Task[]
-    - count : int
-    + TodoList(daftartugas)
-    + TambahTugas(Task) : void
-    + tugasselesai(int) : void
-    + listtugas() : void
+class TodoList {  
+    - tasks : Task[]  
+    - count : int  
+    + TodoList(daftartugas)  
+    + TambahTugas(Task) : void  
+    + tugasselesai(int) : void  
+    + listtugas() : void  
 }
 
-class Latihan_2 {
-    + main(String[] args)
+class Latihan_2 {  
+    + main(String[] args)  
 }
 
-TodoList --> Task
-Latihan_2 --> TodoList
+TodoList --> Task  
+Latihan_2 --> TodoList  
 
 ![Class Diagram](Assets/Classdiagram.png)
 
@@ -123,6 +123,97 @@ public class Latihan_2 {
 ```
 ## Output
 ![Output Program](Assets/Output.png)
+
+## Penjelasan kode
+```java
+class Task {
+    private String tugas;
+    private boolean selesai;
+    private String prioritas;
+}
+```
+Class ini merepresentasikan 1 tugas.  
+yang berisi tugas - nama tugas (contoh: "Belajar Java")  
+selesai - status (true = sudah selesai, false = belum)  
+prioritas - tingkat prioritas (High / Low).  
+
+### constructor
+```java
+public Task(String tugas, String prioritas) {
+        this.tugas = tugas;
+        this.prioritas = prioritas;
+        this.selesai = false;
+    }
+```
+this.tugas = tugas untuk mengisi nama tugas
+this.prioritas = prioritas untuk mengisi prioritas
+this.selesai = false membuat default semua tugas jadi belum selesai
+
+### Getter
+```java
+public String getTugas() {
+        return tugas;
+    }
+
+    public boolean Selesai() {
+        return selesai;
+    }
+
+    public String getPrioritas() {
+        return prioritas;
+    }
+```
+getter methods digunakan untuk mengambil data dari atribut (karena atribut dibuat private)  
+
+#### Method cek
+```java
+public void cek() {
+        selesai = true;
+    }
+```
+untuk Mengubah status tugas jadi selesai
+
+### Todolist
+```java
+class TodoList {
+    private Task[] tasks;
+    private int count;
+}
+```
+Class ini berfungsi sebagai wadah dari banyak Task  
+tasks untuk array untuk menyimpan tugas  
+count untuk jumlah tugas yang sudah ditambahkan  
+
+### constructor
+```java
+public TodoList(int daftartugas) {
+    tasks = new Task[daftartugas];
+    count = 0;
+}
+```
+Untuk membuat array dengan kapasitas tertentu  
+count = 0, membuat agar default menjadi belum ada tugas  
+
+### Method Tambahtugas
+```java
+public void TambahTugas(Task t) { 
+        if (count < tasks.length) {
+            tasks[count] = t;
+            count++;
+            System.out.println("Tugas ditambahkan: " + t.getTugas());
+        } else {
+            System.out.println("TUGAS JANGAN DITUMPUK!");
+        }
+    }
+```
+Method ini gigunakan untuk menambahkan tugas ke array  
+setelah itu Cek apakah array masih ada slot kosong  
+Masukkan tugas ke array  
+Tambah jumlah tugas  
+jika array penuh akan muncul output 
+```java   System.out.println("TUGAS JANGAN DITUMPUK!");```  
+
+
 
 ## Penjelasan prinsip-prinsip OOP apa saja yang diterapkan
 1. Encapsulation (Enkapsulasi)
