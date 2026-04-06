@@ -33,6 +33,8 @@ class Latihan_2 {
 TodoList --> Task
 Latihan_2 --> TodoList
 
+![Class Diagram](Assets/Classdiagram.png)
+
 ## Kode Program JAVA
 ```java
 class Task {
@@ -120,7 +122,7 @@ public class Latihan_2 {
 }
 ```
 ## Output
-![Output Program](Output.png)
+![Output Program](Assets/Output.png)
 
 ## Penjelasan prinsip-prinsip OOP apa saja yang diterapkan
 1. Encapsulation (Enkapsulasi)
