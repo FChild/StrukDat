@@ -206,14 +206,69 @@ public void TambahTugas(Task t) {
         }
     }
 ```
-Method ini gigunakan untuk menambahkan tugas ke array  
+Method ini digunakan untuk menambahkan tugas ke array  
 setelah itu Cek apakah array masih ada slot kosong  
 Masukkan tugas ke array  
 Tambah jumlah tugas  
-jika array penuh akan muncul output 
-```java   System.out.println("TUGAS JANGAN DITUMPUK!");```  
+jika array penuh akan muncul output dari  
+``` System.out.println("TUGAS JANGAN DITUMPUK!"); ```  
 
+### Method tugasselesai()
+```java
+public void tugasselesai(int number) {
+        int index = number - 1; 
 
+        if (index >= 0 && index < count) {
+            tasks[index].cek();
+            System.out.println("Tugas selesai: " + tasks[index].getTugas());
+        } else {
+            System.out.println("MASA BELOM ADA YANG SELESAI!!!");
+        }
+    }
+```
+Method ini digunakan untuk menandai tugas sebagai selesai berdasarkan nomor  
+Karena array mulai dari index 0 tapi saya ingin mulai dari 1 maka saya membuat ```int index = number - 1;```  
+Memanggil method cek agar status menjadi selesai  
+Setelah itu buat agar tidak error dengan ```if (index >= 0 && index < count)```  
+
+### Method listtugas()
+```java 
+public void listtugas() {
+        System.out.println("Daftar:");
+        for (int i = 0; i < count; i++) {
+            String status = tasks[i].Selesai() ? "Done banh" : "Santai dulu ga sih";
+            System.out.println((i + 1) + ". " + tasks[i].getTugas() +
+                " [" + status + "] (Prioritas: " + tasks[i].getPrioritas() + ")");
+        }
+    }
+```
+Method ini berfungsi untuk menampilkan semua tugas yang ada  
+Menggunakan ternary options   
+Kalau selesai → "Done banh"  
+Kalau belum → "Santai dulu ga sih"  
+
+### Class Main
+```java
+public class Latihan_2 {
+    public static void main(String[] args) {
+        TodoList list = new TodoList(5);
+
+        list.TambahTugas(new Task("Kerjain kalkulus", "High"));
+        list.TambahTugas(new Task("Belajar Java", "High"));
+        list.TambahTugas(new Task("Beresin Kamar", "Low"));
+        
+        list.listtugas();
+
+        list.tugasselesai(2); 
+
+        list.listtugas();
+    }
+}
+```
+Membuat TodoList dengan kapasitas maksimal 5 tugas, yang berarti program hanya bisa menyimpan hingga lima data tugas dalam array.  
+Setelah itu, beberapa objek Task langsung dibuat dan ditambahkan ke dalam TodoList menggunakan method TambahTugas  
+Selanjutnya, method listtugas() dipanggil untuk menampilkan seluruh daftar tugas yang sudah dimasukkan ke layar  
+Program kemudian memanggil method tugasselesai(2) untuk menandai tugas kedua sebagai selesai.  
 
 ## Penjelasan prinsip-prinsip OOP apa saja yang diterapkan
 1. Encapsulation (Enkapsulasi)
