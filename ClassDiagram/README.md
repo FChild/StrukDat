@@ -1,5 +1,5 @@
 ## Deskripsi Kasus
-Program ini dibuat untuk membantu saya dalam mencatat daftar tugas sehari-hari, program ini juga mengimplementasikan keempat pilar utama OOP, yaitu encapsulation, abstraction, inheritance, dan polymorphism. Hal ini bertujuan agar kode yang dibuat tidak hanya berfungsi dengan baik, tetapi juga mengikuti prinsip desain perangkat lunak yang baik. 
+Permasalahan yang sering muncul adalah kesulitan dalam mengelola dan memantau tugas-tugas tersebut. Banyak siswa hanya mengandalkan ingatan atau mencatat secara manual, yang sering kali menyebabkan beberapa tugas terlupakan, tidak terselesaikan tepat waktu, atau tidak terorganisir dengan baik. Program ini dibuat untuk membantu saya dalam mencatat daftar tugas sehari-hari, program ini juga mengimplementasikan keempat pilar utama OOP, yaitu encapsulation, abstraction, inheritance, dan polymorphism. Hal ini bertujuan agar kode yang dibuat tidak hanya berfungsi dengan baik, tetapi juga mengikuti prinsip desain perangkat lunak yang baik. 
 Program ini dapat:
 - Menambahkan tugas
 - Melihat daftar tugas
