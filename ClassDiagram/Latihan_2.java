@@ -1,8 +1,12 @@
-    //Muhammad Rifki Pribadi
+//Muhammad Rifki Pribadi
 //5027251087
 //Latihan2
 
-class Task {
+abstract class BaseTask {
+    public abstract void tampilkanInfo();
+}
+
+class Task extends BaseTask {
     private String tugas;
     private boolean selesai;
     private String prioritas;
@@ -17,7 +21,7 @@ class Task {
         return tugas;
     }
 
-    public boolean Selesai() {
+    public boolean isSelesai() {
         return selesai;
     }
 
@@ -27,6 +31,27 @@ class Task {
 
     public void cek() {
         selesai = true;
+    }
+
+    @Override
+    public void tampilkanInfo() {
+        String status = selesai ? "Done banh" : "Santai dulu ga sih";
+        System.out.println(tugas + " [" + status + "] (Prioritas: " + prioritas + ")");
+    }
+}
+
+class AdvancedTask extends Task {
+
+    public AdvancedTask(String tugas, String prioritas) {
+        super(tugas, prioritas);
+    }
+
+    @Override
+    public void tampilkanInfo() {
+        String status = isSelesai() ? "Donee" : "Deadline masih lama";
+        System.out.println(getTugas() +
+                " | Status: " + status +
+                " | Prioritas: " + getPrioritas());
     }
 }
 
@@ -50,7 +75,7 @@ class TodoList {
     }
 
     public void tugasselesai(int number) {
-        int index = number - 1; 
+        int index = number - 1;
 
         if (index >= 0 && index < count) {
             tasks[index].cek();
@@ -63,9 +88,7 @@ class TodoList {
     public void listtugas() {
         System.out.println("Daftar:");
         for (int i = 0; i < count; i++) {
-            String status = tasks[i].Selesai() ? "Done banh" : "Santai dulu ga sih";
-            System.out.println((i + 1) + ". " + tasks[i].getTugas() +
-                " [" + status + "] (Prioritas: " + tasks[i].getPrioritas() + ")");
+            tasks[i].tampilkanInfo(); 
         }
     }
 }
@@ -75,12 +98,12 @@ public class Latihan_2 {
         TodoList list = new TodoList(5);
 
         list.TambahTugas(new Task("Kerjain kalkulus", "High"));
-        list.TambahTugas(new Task("Belajar Java", "High"));
+        list.TambahTugas(new AdvancedTask("Belajar Java", "High")); 
         list.TambahTugas(new Task("Beresin Kamar", "Low"));
-        
+
         list.listtugas();
 
-        list.tugasselesai(2); 
+        list.tugasselesai(2);
 
         list.listtugas();
     }
