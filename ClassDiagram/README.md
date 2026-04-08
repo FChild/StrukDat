@@ -3,7 +3,7 @@ Program ini dibuat untuk membantu saya dalam mencatat daftar tugas sehari-hari, 
 Program ini dapat:
 - Menambahkan tugas
 - Melihat daftar tugas
-- Menandai tugas sebagai selesai
+- Menandai tugas sebagai selesai  
 Jadi program ini tidak hanya menjadi solusi sederhana untuk manajemen tugas, tetapi juga sebagai sarana pembelajaran dalam memahami penerapan konsep OOP secara nyata.
 ## Class Diagram
 class Task {  

@@ -100,7 +100,7 @@ public class Latihan_2 {
         list.TambahTugas(new Task("Kerjain kalkulus", "High"));
         list.TambahTugas(new AdvancedTask("Belajar Java", "High")); 
         list.TambahTugas(new Task("Beresin Kamar", "Low"));
-        list.TambahTugas(new AdvancedTask("Tugas Praktikum", "Low"));
+        list.TambahTugas(new AdvancedTask("Kerjain Praktikum", "Low"));
 
         list.listtugas();
 
