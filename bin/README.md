@@ -1,10 +1,10 @@
 ## Deskripsi Kasus
-Program ini dibuat untuk membantu saya dalam mencatat daftar tugas sehari-hari.  
+Program ini dibuat untuk membantu saya dalam mencatat daftar tugas sehari-hari, program ini juga mengimplementasikan keempat pilar utama OOP, yaitu encapsulation, abstraction, inheritance, dan polymorphism. Hal ini bertujuan agar kode yang dibuat tidak hanya berfungsi dengan baik, tetapi juga mengikuti prinsip desain perangkat lunak yang baik. 
 Program ini dapat:
 - Menambahkan tugas
 - Melihat daftar tugas
 - Menandai tugas sebagai selesai
-
+Jadi program ini tidak hanya menjadi solusi sederhana untuk manajemen tugas, tetapi juga sebagai sarana pembelajaran dalam memahami penerapan konsep OOP secara nyata.
 ## Class Diagram
 class Task {  
     - tugas : String  
@@ -83,7 +83,7 @@ class AdvancedTask extends Task {
 
     @Override
     public void tampilkanInfo() {
-        String status = isSelesai() ? "Done Banh" : "Santai dulu ga sih";
+        String status = isSelesai() ? "Donee" : "Deadline masih lama";
         System.out.println(getTugas() +
                 " | Status: " + status +
                 " | Prioritas: " + getPrioritas());
@@ -145,7 +145,7 @@ public class Latihan_2 {
 }
 ```
 ## Output
-![Output Program](Assets/Output.png)
+![Output Program](Assets/Output.jpeg)
 
 ## Penjelasan kode
 ```java
@@ -337,7 +337,17 @@ yang diwarisi:
 atribut: tugas, selesai, prioritas
 method: getTugas(), cek(), dll
 
-4. 
+4. Polymorphism (Banyak Bentuk)
+Polymorphism adalah kemampuan sebuah method untuk memiliki banyak bentuk atau perilaku berbeda, tergantung pada object yang memanggilnya.
+```java
+@Override
+public void tampilkanInfo()
+```
+method ini berada di Task dan di AdvancedTask
+```java
+tasks[i].tampilkanInfo();
+```
+Walaupun method sama outputnya akan berbeda.
 
 ## Penjelasan keunikan yang membedakan dengan individu lain
 1. Validasi Kapasitas Array

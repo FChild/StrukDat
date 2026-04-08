@@ -35,7 +35,7 @@ class Task extends BaseTask {
 
     @Override
     public void tampilkanInfo() {
-        String status = selesai ? "Done banh" : "Santai dulu ga sih";
+        String status = selesai ? "Done banh" : "Santai dulu ga sih ";
         System.out.println(tugas + " [" + status + "] (Prioritas: " + prioritas + ")");
     }
 }
@@ -70,7 +70,7 @@ class TodoList {
             count++;
             System.out.println("Tugas ditambahkan: " + t.getTugas());
         } else {
-            System.out.println("TUGAS JANGAN DITUMPUK!");
+            System.out.println("TUGAS JANGAN DITUMPUK!!");
         }
     }
 
@@ -100,6 +100,7 @@ public class Latihan_2 {
         list.TambahTugas(new Task("Kerjain kalkulus", "High"));
         list.TambahTugas(new AdvancedTask("Belajar Java", "High")); 
         list.TambahTugas(new Task("Beresin Kamar", "Low"));
+        list.TambahTugas(new AdvancedTask("Tugas Praktikum", "Low"));
 
         list.listtugas();
 
