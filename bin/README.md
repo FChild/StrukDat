@@ -295,7 +295,7 @@ Selanjutnya, method listtugas() dipanggil untuk menampilkan seluruh daftar tugas
 Program kemudian memanggil method tugasselesai(2) untuk menandai tugas kedua sebagai selesai.  
 
 ## Penjelasan prinsip-prinsip OOP apa saja yang diterapkan
-1. Encapsulation (Enkapsulasi)
+1. Encapsulation  
 
 Encapsulation adalah konsep membungkus data (atribut) dan method dalam satu class, serta membatasi akses langsung ke data tersebut.
 ```java
@@ -308,7 +308,7 @@ Agar tetap bisa diakses, gunakan method publik seperti:
 public String getTugas()
 public boolean Selesai()
 ```
-2. Abstraction (Abstraksi)
+2. Abstraction  
 Abstraction adalah menyembunyikan detail implementasi dan hanya menampilkan fungsi penting kepada pengguna.
 ``` java
 abstract class BaseTask {
@@ -318,7 +318,7 @@ abstract class BaseTask {
 Tidak memiliki isi method hanya memberikan “kontrak” atau aturan  
 yang berarti semua class turunan harus punya method tampilkanInfo()
 
-3. Inheritance 
+3. Inheritance   
 Inheritance adalah konsep di mana sebuah class dapat mewarisi atribut dan method dari class lain.
 ```java
 class Task extends BaseTask
@@ -338,7 +338,7 @@ yang diwarisi:
 atribut: tugas, selesai, prioritas
 method: getTugas(), cek(), dll
 
-4. Polymorphism (Banyak Bentuk)
+4. Polymorphism  
 Polymorphism adalah kemampuan sebuah method untuk memiliki banyak bentuk atau perilaku berbeda, tergantung pada object yang memanggilnya.
 ```java
 @Override
